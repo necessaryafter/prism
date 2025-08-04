@@ -1,4 +1,10 @@
 package com.prism.core.model.rule
 
-class TargetingRuleImpl {
-}
+import com.prism.api.model.rule.TargetingRule
+import com.prism.api.model.rule.condition.RuleCondition
+
+data class TargetingRuleImpl(
+    override val id: Long,
+    override val priority: Int,
+    override val ruleCondition: RuleCondition
+) : TargetingRule
