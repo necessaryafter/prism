@@ -1,9 +1,15 @@
-package com.prism.api.model.rule.condition
+package com.prism.api.model.rule.condition.impl
 
 import com.google.common.hash.Hashing
+import com.prism.api.model.rule.condition.EvaluationContext
+import com.prism.api.model.rule.condition.RuleCondition
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 import kotlin.math.abs
 
-data class PercentageRolloutRuleCondition(val percentage: Int) : RuleCondition {
+@Serializable
+@SerialName("Percentage")
+data class PercentageRuleCondition(val percentage: Int) : RuleCondition {
 
     override fun validate(
         context: EvaluationContext,
